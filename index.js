@@ -1,11 +1,15 @@
-const express = require('express')
-//creates all the setup to connect with node and the route handlers
+const express = require('express');
+require('./services/passport')
 const app = express();
+require('./routes/authRoutes')(app)
 
-app.get('/', (req,res)=>{
-    res.send({hi:'there'});
+// const route = express.Router();
+// app.route()
+
+app.get('/', (req, res) => {
+  res.send({ hi: 'there' });
 });
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT);
