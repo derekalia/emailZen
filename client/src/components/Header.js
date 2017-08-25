@@ -15,8 +15,7 @@ class Header extends React.Component {
           </li>
         );
       default:
-        return;
-        [
+        return [
           <li>
             <Payments />
           </li>,
