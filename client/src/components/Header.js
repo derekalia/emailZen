@@ -16,12 +16,16 @@ class Header extends React.Component {
         );
       default:
         return [
-          <li>
+          <li key="1">
             <Payments />
           </li>,
-          <li>
+          <li key="2">
             <a href="/api/logout">Logout</a>
-          </li>
+          </li>,
+          <li key="3">
+            Credits: {this.props.auth.credits}
+        </li>
+
         ];
     }
   }
