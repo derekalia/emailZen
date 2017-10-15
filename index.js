@@ -42,7 +42,7 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-require('./routes/surveyRoutes')
+
 
 
 const PORT = process.env.PORT || 5000;

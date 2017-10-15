@@ -18,14 +18,25 @@ export const fetchUser = () => async dispatch => {
 // export const fetchUser = () => async dispatch =>
 //   dispatch({ type: FETCH_USER, payload: await axios.get('/api/current_user') });
 
-export const handleToken = (token) => async dispatch => {
+export const handleToken = token => async dispatch => {
   //make post req to backend
   const res = await axios.post('/api/stripe', token);
 
   //update the amount of coins
-  dispatch({type: FETCH_USER, payload: res.data });
-}
+  dispatch({ type: FETCH_USER, payload: res.data });
+};
 
 // export const fetchCredits = () => async dispatch => {
 //   const credit = await axios.get('/api')
 // }
+
+export const submitSurvey = (values,history) => async dispatch => {
+  //make post req to backend
+  console.log(values)
+  const res = await axios.post('/api/surveys', values);
+
+  history.push('/surveys')
+
+  //update shit
+  dispatch({ type: FETCH_USER, payload: res.data });
+};
